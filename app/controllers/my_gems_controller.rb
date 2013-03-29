@@ -24,7 +24,7 @@ class MyGemsController < ApplicationController
   end
 
   def show
-    @my_gem=Mygem.find(params[:id])
+   
   end
   def destroy
     MyGem.destroy(params[:id])
