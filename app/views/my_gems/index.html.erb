@@ -1,0 +1,18 @@
+<h1>Mygems</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<%#=render :partial=>'/partials/my_gems/index', :collection=>@my_gems,:as=>:my_gem %>
+  <%=render(@my_gems)%>
+</table>
+
+<br />
+
+<%= link_to 'New book', new_my_gem_path %>
