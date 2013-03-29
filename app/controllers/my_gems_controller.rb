@@ -21,11 +21,10 @@ class MyGemsController < ApplicationController
   
   def index
     @my_gems= MyGem.all
-   
-
   end
 
   def show
+    @my_gem=Mygem.find(params[:id])
   end
   def destroy
     MyGem.destroy(params[:id])
