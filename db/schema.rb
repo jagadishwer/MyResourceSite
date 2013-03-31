@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130221182052) do
+ActiveRecord::Schema.define(:version => 20130331153530) do
 
   create_table "images", :force => true do |t|
     t.string   "image"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130221182052) do
     t.string   "imagable_type"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "my_gem_id"
   end
 
   add_index "images", ["imagable_id"], :name => "index_images_on_imagable_id"
@@ -28,12 +29,16 @@ ActiveRecord::Schema.define(:version => 20130221182052) do
     t.string   "instructions"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "slug"
   end
+
+  add_index "my_gems", ["slug"], :name => "index_my_gems_on_slug"
 
   create_table "resources", :force => true do |t|
     t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "my_gem_id"
   end
 
 end

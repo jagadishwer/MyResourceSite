@@ -1,2 +1,23 @@
-<h1>MyGems#show</h1>
-<p>Find me in app/views/my_gems/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @my_gem.name %>
+</p>
+
+<p>
+  <b>instruction:</b>
+  <%= @my_gem.instructions %>
+</p>
+<p>
+  <b>Resources:</b>
+  <%= render @my_gem.resources %>
+</p>
+
+<p>
+  <b>Screen Shots:</b>
+  <%= render @my_gem.images %>
+</p>
+
+<%= link_to 'Edit', edit_my_gem_path(@my_gem) %> |
+<%= link_to 'Back', my_gems_path %>

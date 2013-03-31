@@ -1,6 +1,10 @@
 class Image < ActiveRecord::Base
+ attr_accessible :image, :name, :polymorphic => true
   belongs_to :imagable
-  attr_accessible :image, :polymorphic => true
-   mount_uploader :file, FileUploader
+  
+  mount_uploader :image, ImageUploader
+#   def name=(name)
+#
+#   end
 
 end

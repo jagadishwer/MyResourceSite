@@ -1,0 +1,20 @@
+<%=nested_form_for @my_gem, :html=>{:multipart=>true} do |f|%>
+<p><%=f.label :gem_name%> :
+<%=f.text_field :name%></p>
+<p><%=f.label :instructions%> :
+<%=f.text_area :instructions%></p>
+<p><%=f.label :screen_shots%> : </p>
+<%=f.fields_for :images do |img|%>
+<p><%=img.file_field :image%> :
+<%=img.link_to_remove "delete" %></p>
+<%end%>
+<%=f.link_to_add "add",:images %>
+<p><%=f.label :resources%> : </p>
+<%=f.fields_for :resources do |res|%>
+<p><%=res.url_field :url%>
+<%=res.link_to_remove "delete" %></p>
+<%end%>
+<%=f.link_to_add "add",:resources %>
+
+<%=f.submit%>
+<%end%>
